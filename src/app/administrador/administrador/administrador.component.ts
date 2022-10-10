@@ -44,7 +44,7 @@ export class AdministradorComponent implements OnInit {
   }
 
   onAdd() {
-    this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota a relativa a rota em que já se está
+    this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota é relativa a rota em que já se está
   }
 
 }

@@ -17,4 +17,8 @@ export class AdministradorService {
     return this.httpClient.get<Administrador[]>(this.API).pipe(first());
   }
 
+  save(administrador: Administrador) {
+    return this.httpClient.post<Administrador>(this.API, administrador);
+  }
+
 }

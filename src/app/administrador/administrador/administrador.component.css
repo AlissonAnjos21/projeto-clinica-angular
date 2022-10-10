@@ -1,6 +1,14 @@
 table {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+mat-card {
+  border-radius: 15px;;
+}
+
+mat-toolbar {
+  border-radius: 5px;
+}
 
 .loading-spinner {
   display: flex;
