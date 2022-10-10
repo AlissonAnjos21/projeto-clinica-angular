@@ -6,6 +6,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { AdministradorFormComponent } from './administrador-form/administrador-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AdministradorFormComponent } from './administrador-form/administrador-f
     CommonModule,
     AdministradorRoutingModule,
     AppMaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministradorModule { }

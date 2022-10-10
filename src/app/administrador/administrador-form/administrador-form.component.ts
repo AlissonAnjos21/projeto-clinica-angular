@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-administrador-form',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministradorFormComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { 
+    this.form = this.formBuilder.group({
+      usuario: [null],
+      senha: [null]
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+
+  }
+
+  onCancel() {
+    
   }
 
 }
