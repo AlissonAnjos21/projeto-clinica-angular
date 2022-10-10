@@ -13,7 +13,7 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 export class AdministradorComponent implements OnInit {
 
   administradores$: Observable<Administrador[]>;
-  displayedColumns = ['id', 'usuario'];
+  displayedColumns = ['id', 'usuario', 'actions'];
 
   // administradorService: AdministradorService;
 
