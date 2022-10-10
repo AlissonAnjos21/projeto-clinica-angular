@@ -4,6 +4,7 @@ import { AdministradorService } from '../services/administrador.service';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-administrador',
@@ -19,7 +20,9 @@ export class AdministradorComponent implements OnInit {
 
   constructor( 
     private administradorService: AdministradorService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,  // Possibilita a navegação entre rotas
+    private route: ActivatedRoute  // Informa a rota onde se está atualmente
     ) {
     // this.administradores = [];
     // this.administradorService = new AdministradorService();
@@ -38,6 +41,10 @@ export class AdministradorComponent implements OnInit {
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {data: errorMsg});
+  }
+
+  onAdd() {
+    this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota a relativa a rota em que já se está
   }
 
 }
