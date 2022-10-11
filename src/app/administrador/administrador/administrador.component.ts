@@ -14,15 +14,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AdministradorComponent implements OnInit {
 
   administradores$: Observable<Administrador[]>;
-  displayedColumns = ['id', 'usuario', 'actions'];
 
   // administradorService: AdministradorService;
 
   constructor( 
     private administradorService: AdministradorService,
     public dialog: MatDialog,
-    private router: Router,  // Possibilita a navegação entre rotas
-    private route: ActivatedRoute  // Informa a rota onde se está atualmente
+    // private router: Router,  // Possibilita a navegação entre rotas
+    // private route: ActivatedRoute  // Informa a rota onde se está atualmente
     ) {
     // this.administradores = [];
     // this.administradorService = new AdministradorService();
@@ -43,8 +42,8 @@ export class AdministradorComponent implements OnInit {
     this.dialog.open(ErrorDialogComponent, {data: errorMsg});
   }
 
-  onAdd() {
-    this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota é relativa a rota em que já se está
-  }
+  // onAdd() {
+  //   this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota é relativa a rota em que já se está
+  // }
 
 }

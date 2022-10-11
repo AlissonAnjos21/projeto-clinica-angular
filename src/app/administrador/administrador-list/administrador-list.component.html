@@ -1,0 +1,40 @@
+<mat-table [dataSource]="administradores">
+    
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id: </mat-header-cell>
+        <mat-cell *matCellDef="let administrador"> {{administrador.id}} </mat-cell>
+    </ng-container>
+
+    <!-- User Column -->
+    <ng-container matColumnDef="usuario">
+        <mat-header-cell *matHeaderCellDef> Usuário: </mat-header-cell>
+        <mat-cell *matCellDef="let administrador"> {{administrador.usuario}} </mat-cell>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+        <!-- Add Column -->
+        <mat-header-cell *matHeaderCellDef class="action-column">
+            <button mat-mini-fab style="background-color: #29c252;" aria-label="Adicionar Administrador">
+                <mat-icon (click)="onAdd()">add</mat-icon>
+            </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let administrador" class="action-column">
+            <!-- Edit Column -->
+            <button mat-icon-button style="color: #cc690d;" aria-label="Editar Administrador">
+                <mat-icon>edit</mat-icon>
+            </button>
+
+            <!-- Remove Column -->
+            <button mat-icon-button color="warn" aria-label="Apagar Administrador">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-cell>
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
