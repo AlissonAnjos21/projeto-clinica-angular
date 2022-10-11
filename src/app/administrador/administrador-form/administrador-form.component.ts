@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdministradorService } from '../services/administrador.service';
 
@@ -11,18 +11,18 @@ import { AdministradorService } from '../services/administrador.service';
 })
 export class AdministradorFormComponent implements OnInit {
 
-  form: FormGroup;
+  form = this.formBuilder.group({
+    usuario: [''],
+    senha: ['']
+  });
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: NonNullableFormBuilder,
     private administradorFormService: AdministradorService,
     private _snackBar: MatSnackBar,
     private location: Location
   ) { 
-    this.form = this.formBuilder.group({
-      usuario: [null],
-      senha: [null]
-    });
+    // this.form
   }
 
   ngOnInit(): void {

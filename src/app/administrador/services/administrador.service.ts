@@ -17,7 +17,8 @@ export class AdministradorService {
     return this.httpClient.get<Administrador[]>(this.API).pipe(first());
   }
 
-  save(administrador: Administrador) {
+  // O Partial permite que eu consiga receber um objeto que tenha pelo menos um atributo dos presentes na interface. Entretanto, para que as informações sejam tratadas de forma adequada, é necessário que o back-end promova as devidas medidas.
+  save(administrador: Partial<Administrador>) {
     return this.httpClient.post<Administrador>(this.API, administrador);
   }
 
