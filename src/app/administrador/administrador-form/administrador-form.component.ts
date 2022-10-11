@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,7 +16,8 @@ export class AdministradorFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private administradorFormService: AdministradorService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private location: Location
   ) { 
     this.form = this.formBuilder.group({
       usuario: [null],
@@ -30,16 +32,21 @@ export class AdministradorFormComponent implements OnInit {
     // console.log("It's Working");
     // console.log(this.form.value)
     this.administradorFormService.save(this.form.value)
-    .subscribe(result => console.log(result), error => this.onErrorSnackBar());
+    .subscribe(result => this.onSuccess(), error => this.onError());
 
   }
 
   onCancel() {
     // console.log("It's Working Too");
-
+    this.location.back(); // Volta
   }
 
-  private onErrorSnackBar() {
+  private onSuccess() {
+    this._snackBar.open('Cadastro realizado com sucesso!', '', {duration: 5000});
+    this.onCancel(); // Volta
+  }
+
+  private onError() {
     this._snackBar.open('Erro! Falha no cadastro.', '', {duration: 5000});
   }
 
