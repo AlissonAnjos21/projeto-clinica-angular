@@ -17,7 +17,7 @@ export class AdministradorComponent implements OnInit {
 
   // administradorService: AdministradorService;
 
-  constructor( 
+  constructor(
     private administradorService: AdministradorService,
     public dialog: MatDialog,
     private router: Router,  // Possibilita a navegação entre rotas
@@ -25,7 +25,7 @@ export class AdministradorComponent implements OnInit {
     ) {
     // this.administradores = [];
     // this.administradorService = new AdministradorService();
-    this.administradores$ = this.administradorService.list().pipe(
+    this.administradores$ = this.administradorService.listAll().pipe(
       // O pipe que trará o tratamento de erros
       catchError(error => {
         // console.log(error)
@@ -44,6 +44,10 @@ export class AdministradorComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota é relativa a rota em que já se está
+  }
+
+  onEdit(administrador: Administrador) {
+    this.router.navigate(['edit', administrador.id], {relativeTo: this.route});
   }
 
 }

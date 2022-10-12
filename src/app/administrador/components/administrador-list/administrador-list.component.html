@@ -24,7 +24,7 @@
         <mat-cell *matCellDef="let administrador" class="action-column">
             <!-- Edit Column -->
             <button mat-icon-button style="color: #cc690d;" aria-label="Editar Administrador" title="Editar">
-                <mat-icon>edit</mat-icon>
+                <mat-icon (click)="onEdit(administrador)">edit</mat-icon>
             </button>
 
             <!-- Remove Column -->

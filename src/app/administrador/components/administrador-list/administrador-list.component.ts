@@ -11,6 +11,7 @@ export class AdministradorListComponent implements OnInit {
   readonly displayedColumns = ['id', 'usuario', 'actions'];
   @Input() administradores: Administrador[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
   constructor() { }
 
@@ -19,6 +20,10 @@ export class AdministradorListComponent implements OnInit {
 
   onAdd() {
     this.add.emit(true);
+  }
+
+  onEdit(administrador: Administrador) {
+    this.edit.emit(administrador);
   }
 
 }
