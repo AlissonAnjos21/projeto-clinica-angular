@@ -1,5 +1,5 @@
 <mat-table [dataSource]="administradores">
-    
+
     <!-- Id Column -->
     <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef> Id: </mat-header-cell>
@@ -17,18 +17,18 @@
         <!-- Add Column -->
         <mat-header-cell *matHeaderCellDef class="action-column">
             <button mat-mini-fab style="background-color: #29c252;" aria-label="Adicionar Administrador">
-                <mat-icon (click)="onAdd()">add</mat-icon>
+                <mat-icon (click)="onAdd()" title="Adicionar">add</mat-icon>
             </button>
         </mat-header-cell>
 
         <mat-cell *matCellDef="let administrador" class="action-column">
             <!-- Edit Column -->
-            <button mat-icon-button style="color: #cc690d;" aria-label="Editar Administrador">
+            <button mat-icon-button style="color: #cc690d;" aria-label="Editar Administrador" title="Editar">
                 <mat-icon>edit</mat-icon>
             </button>
 
             <!-- Remove Column -->
-            <button mat-icon-button color="warn" aria-label="Apagar Administrador">
+            <button mat-icon-button color="warn" aria-label="Apagar Administrador" title="Remover">
                 <mat-icon>delete</mat-icon>
             </button>
         </mat-cell>
