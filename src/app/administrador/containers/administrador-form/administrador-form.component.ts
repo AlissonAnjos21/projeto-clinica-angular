@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdministradorService } from '../../services/administrador.service';
+import { ActivatedRoute } from '@angular/router';
+import { Administrador } from '../../model/administrador';
 
 @Component({
   selector: 'app-administrador-form',
@@ -20,19 +22,22 @@ export class AdministradorFormComponent implements OnInit {
     private formBuilder: NonNullableFormBuilder,
     private administradorFormService: AdministradorService,
     private _snackBar: MatSnackBar,
-    private location: Location
-  ) { 
+    private location: Location,
+    private route: ActivatedRoute
+  ) {
     // this.form
   }
 
   ngOnInit(): void {
+    const administrador: Administrador = this.route.snapshot.data['administrador'];
+    // console.log(administrador);
   }
 
   onSubmit() {
     // console.log("It's Working");
-    // console.log(this.form.value)
+    // console.log(this.form.value);
     this.administradorFormService.save(this.form.value)
-    .subscribe(result => this.onSuccess(), error => this.onError());
+    .subscribe({next: result => {this.onSuccess();}, error: error => {this.onError();}});
 
   }
 
