@@ -11,15 +11,15 @@ import { Administrador } from '../model/administrador';
 @Injectable({
   providedIn: 'root'
 })
-export class AdministradorResolver implements Resolve<Partial<Administrador>> {
+export class AdministradorResolver implements Resolve<Administrador> {
 
   constructor(private service: AdministradorService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Partial<Administrador>> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Administrador> {
     if(route.params && route.params['id']) {
       return this.service.findById(route.params['id']);
     }
 
-    return of({usuario: '', senha: ''});
+    return of({id: '', usuario: '', senha: ''});
   }
 }

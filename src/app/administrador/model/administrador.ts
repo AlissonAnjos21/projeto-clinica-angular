@@ -1,5 +1,5 @@
 export interface Administrador {
-    id: number;
+    id: string;
     usuario: string;
     senha: string;
 }

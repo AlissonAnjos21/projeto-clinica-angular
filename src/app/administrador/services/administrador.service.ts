@@ -22,7 +22,7 @@ export class AdministradorService {
     return this.httpClient.post<Administrador>(this.API, administrador);
   }
 
-  findById(id: number) {
+  findById(id: string) {
     return this.httpClient.get<Administrador>(`${this.API}/${id}`);
   }
 

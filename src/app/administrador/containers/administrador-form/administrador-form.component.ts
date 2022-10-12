@@ -14,6 +14,7 @@ import { Administrador } from '../../model/administrador';
 export class AdministradorFormComponent implements OnInit {
 
   form = this.formBuilder.group({
+    id: [''],
     usuario: [''],
     senha: ['']
   });
@@ -30,7 +31,14 @@ export class AdministradorFormComponent implements OnInit {
 
   ngOnInit(): void {
     const administrador: Administrador = this.route.snapshot.data['administrador'];
-    // console.log(administrador);
+    console.log(administrador);
+
+    this.form.setValue({
+      id: administrador.id,
+      usuario: administrador.usuario,
+      senha: administrador.senha
+    })
+
   }
 
   onSubmit() {
