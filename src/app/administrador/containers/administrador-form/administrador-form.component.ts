@@ -31,7 +31,7 @@ export class AdministradorFormComponent implements OnInit {
 
   ngOnInit(): void {
     const administrador: Administrador = this.route.snapshot.data['administrador'];
-    console.log(administrador);
+    // console.log(administrador);
 
     this.form.setValue({
       id: administrador.id,
