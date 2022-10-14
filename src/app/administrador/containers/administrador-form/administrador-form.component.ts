@@ -19,6 +19,8 @@ export class AdministradorFormComponent implements OnInit {
     senha: ['']
   });
 
+  action: string = '';
+
   constructor(
     private formBuilder: NonNullableFormBuilder,
     private administradorFormService: AdministradorService,
@@ -38,6 +40,13 @@ export class AdministradorFormComponent implements OnInit {
       usuario: administrador.usuario,
       senha: administrador.senha
     })
+
+    this.action = 'Cadastrar';
+
+    if(administrador.id) {
+      // console.log('Working');
+      this.action = 'Editar';
+    }
 
   }
 
