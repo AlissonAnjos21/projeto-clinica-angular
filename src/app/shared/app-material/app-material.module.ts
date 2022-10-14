@@ -22,7 +22,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule
-    
+
   ]
 })
 export class AppMaterialModule { }

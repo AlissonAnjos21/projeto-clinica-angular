@@ -12,6 +12,7 @@ export class AdministradorListComponent implements OnInit {
   @Input() administradores: Administrador[] = [];
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
+  @Output() delete = new EventEmitter(false);
 
   constructor() { }
 
@@ -24,6 +25,10 @@ export class AdministradorListComponent implements OnInit {
 
   onEdit(administrador: Administrador) {
     this.edit.emit(administrador);
+  }
+
+  onDelete(administrador: Administrador) {
+    this.delete.emit(administrador);
   }
 
 }

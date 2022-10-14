@@ -5,6 +5,7 @@ import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-administrador',
@@ -48,6 +49,11 @@ export class AdministradorComponent implements OnInit {
 
   onEdit(administrador: Administrador) {
     this.router.navigate(['edit', administrador.id], {relativeTo: this.route});
+  }
+
+  onDelete(administrador: Administrador) {
+    // console.log(administrador);
+    this.dialog.open(DeleteDialogComponent, {data: administrador.id});
   }
 
 }

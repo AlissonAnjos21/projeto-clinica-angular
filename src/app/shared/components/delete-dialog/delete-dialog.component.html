@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Remover Item</h1>
+<div mat-dialog-content>
+  Você realmente gostaria de remover o item de <p style="font-weight: bold;">ID: {{data}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Não</button>
+  <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(32, 170, 152);" (click)="onAgree()">Sim</button>
+</div>
