@@ -9,6 +9,7 @@ import { AdministradorFormComponent } from './containers/administrador-form/admi
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdministradorListComponent } from './components/administrador-list/administrador-list.component';
 import { AdministradorSearchComponent } from './containers/administrador-search/administrador-search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AdministradorSearchComponent } from './containers/administrador-search/
     AdministradorRoutingModule,
     AppMaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdministradorModule { }

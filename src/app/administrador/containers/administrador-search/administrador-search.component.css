@@ -1,3 +1,19 @@
+mat-card {
+  border-radius: 15px;
+  max-width: 60%;
+  text-align: center;
+  margin: 2em auto;
+}
+
+mat-toolbar {
+  border-radius: 5px;
+}
+
+mat-form-field {
+  padding-top: 2em;
+  margin: 2em;
+}
+
 .loading-spinner {
   display: flex;
   justify-content: center;
@@ -6,20 +22,13 @@
   padding: 21px;
 }
 
-mat-card {
-  border-radius: 15px;;
-  max-width: 80%;
-  text-align: center;
-  margin: 2em auto;
-}
-
-mat-toolbar {
-  border-radius: 5px;
-  justify-content: space-between;
-}
-
 .column-flex {
   display: flex;
   flex-direction: column;
   min-width: 300px;
+}
+
+.min-width {
+  width: 100%;
+  min-width: 150px;
 }
