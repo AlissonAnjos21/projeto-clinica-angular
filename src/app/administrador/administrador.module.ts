@@ -8,13 +8,15 @@ import { SharedModule } from '../shared/shared.module';
 import { AdministradorFormComponent } from './containers/administrador-form/administrador-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdministradorListComponent } from './components/administrador-list/administrador-list.component';
+import { AdministradorSearchComponent } from './containers/administrador-search/administrador-search.component';
 
 
 @NgModule({
   declarations: [
     AdministradorComponent,
     AdministradorFormComponent,
-    AdministradorListComponent
+    AdministradorListComponent,
+    AdministradorSearchComponent
   ],
   imports: [
     CommonModule,

@@ -56,4 +56,8 @@ export class AdministradorComponent implements OnInit {
     this.dialog.open(DeleteDialogComponent, {data: administrador.id});
   }
 
+  onSearch() {
+    this.router.navigate(['find'], {relativeTo: this.route});
+  }
+
 }
