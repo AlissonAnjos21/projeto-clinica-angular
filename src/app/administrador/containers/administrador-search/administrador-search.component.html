@@ -29,6 +29,10 @@
   </mat-toolbar>
 
   <div class="column-flex mat-elevation-z8">
+    <app-administrador-list *ngIf="administradores$ | async as administradores; else loading "[administradores]="administradores" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)">
+
+    </app-administrador-list>
+
     <ng-template #loading >
       <div class="loading-spinner">
           <mat-spinner></mat-spinner>

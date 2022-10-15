@@ -39,7 +39,7 @@ export class AdministradorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onError(errorMsg: string) {
+  private onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {data: errorMsg});
   }
 

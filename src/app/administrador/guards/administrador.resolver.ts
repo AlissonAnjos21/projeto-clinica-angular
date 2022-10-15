@@ -13,11 +13,11 @@ import { Administrador } from '../model/administrador';
 })
 export class AdministradorResolver implements Resolve<Administrador> {
 
-  constructor(private service: AdministradorService) {}
+  constructor(private serviceAdministrador: AdministradorService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Administrador> {
     if(route.params && route.params['id']) {
-      return this.service.findById(route.params['id']);
+      return this.serviceAdministrador.findById(route.params['id']);
     }
 
     return of({id: '', usuario: '', senha: ''});
