@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { AdministradorService } from '../../services/administrador.service';
-import { catchError, from, map, merge, Observable, of, tap, toArray } from 'rxjs';
+import { catchError, Observable, of, toArray } from 'rxjs';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Administrador } from '../../model/administrador';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-administrador-search',
@@ -23,7 +25,8 @@ export class AdministradorSearchComponent implements OnInit {
   constructor(
     private formBuilder: NonNullableFormBuilder,
     private serviceAdministrador: AdministradorService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
     ) {
       this.administradores$ = new Observable<Administrador[]>();
     }
@@ -35,37 +38,40 @@ export class AdministradorSearchComponent implements OnInit {
     // console.log('Working');
     // console.log(this.formSearchType.value.type);
     // console.log(this.formSearchType.value.value);
-    if(this.formSearchType.value.type == 'id'){
+    if(this.formSearchType.value.type == 'id' && this.formSearchType.value.value){
       this.administradores$ = this.serviceAdministrador.findById(this.formSearchType.value.value!).pipe(
         toArray(),
         catchError(error => {
-          this.onError('Falha na Exibição! Verifique a sua conexão com a base de dados.');
+          this.onError('Falha na Exibição! Verifique a base de dados.');
           return of();
         })
       );
       // console.log('Working');
-    }else{
+    }else if(this.formSearchType.value.type == 'usuario' && this.formSearchType.value.value){
+      // console.log('Working else-if');
       this.administradores$ = this.serviceAdministrador.findByUser(this.formSearchType.value.value!).pipe(
         catchError(error => {
-          this.onError('Falha na Exibição! Verifique a sua conexão com a base de dados.');
+          // console.log('Working error step');
+          this.onError('Falha na Exibição! Verifique a base de dados.');
           return of([]);
-        })
-      );
+        }));
       // console.log('Working');
+    }else {
+      this.onError('Falha na Exibição! Insira os dados necessários.');
     }
 
   }
 
-  onEdit(administrador: Administrador) {
+  onAdd() {
+    this.router.navigate(['administradores/new']);
+  }
 
+  onEdit(administrador: Administrador) {
+    this.router.navigate(['administradores/edit', administrador.id]);
   }
 
   onDelete(administrador: Administrador) {
-
-  }
-
-  onAdd() {
-
+    this.dialog.open(DeleteDialogComponent, {data: administrador.id});
   }
 
   private onError(errorMsg: string) {
