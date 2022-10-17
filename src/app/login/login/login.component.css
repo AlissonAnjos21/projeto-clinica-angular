@@ -1,0 +1,27 @@
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+  border-radius: 30px;
+}
+
+mat-toolbar {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Classe que afetará o formulário */
+.min-width {
+  width: 100%;
+  min-width: 150px;
+}
+
+.login-button {
+  background-color: rgb(84, 221, 153);
+  padding-right: 3em;
+  padding-left: 3em;
+}
