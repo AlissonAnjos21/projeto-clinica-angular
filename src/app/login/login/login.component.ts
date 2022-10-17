@@ -24,7 +24,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    // console.log(this.form.value.usuario, this.form.value.senha);
+    // console.log(this.form.value);
 
+    this.loginService.loginConfirm(this.form.value);
   }
 
 }

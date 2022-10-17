@@ -11,6 +11,13 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
+  loginConfirm(administrador: Partial<Administrador>) {
+
+    this.findByUser(administrador.usuario!);
+    // console.log('Working');
+
+  }
+
   findByUser(user: string) {
     return this.httpClient.get<Administrador[]>(`${this.API}/find?usuario=${user}`);
   }
