@@ -60,4 +60,8 @@ export class AdministradorComponent implements OnInit {
     this.router.navigate(['find'], {relativeTo: this.route});
   }
 
+  onBack() {
+    this.router.navigate(['']);
+  }
+
 }

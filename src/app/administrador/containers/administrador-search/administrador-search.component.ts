@@ -7,6 +7,7 @@ import { Administrador } from '../../model/administrador';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-administrador-search',
@@ -26,7 +27,8 @@ export class AdministradorSearchComponent implements OnInit {
     private formBuilder: NonNullableFormBuilder,
     private serviceAdministrador: AdministradorService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private location: Location
     ) {
       this.administradores$ = new Observable<Administrador[]>();
     }
@@ -76,6 +78,10 @@ export class AdministradorSearchComponent implements OnInit {
 
   private onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {data: errorMsg});
+  }
+
+  onBack() {
+    this.location.back();
   }
 
 }
