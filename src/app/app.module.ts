@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login/services/login.service';
 import { LoginModule } from './login/login.module';
+import { AppMaterialModule } from './shared/app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginModule } from './login/login.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    AppMaterialModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

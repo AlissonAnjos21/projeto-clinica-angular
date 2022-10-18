@@ -1,0 +1,17 @@
+.example-card {
+  max-width: 400px;
+  max-height: 100px;
+  text-align: justify;
+  background-color: rgba(122, 143, 201, 0.932);
+}
+
+.example-card p {
+  font-size: 8.5px;
+}
+
+.main-container {
+  display: flex;
+  background-color: rgba(122, 143, 201, 0.932);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
