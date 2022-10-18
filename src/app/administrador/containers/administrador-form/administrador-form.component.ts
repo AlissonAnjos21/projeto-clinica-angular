@@ -5,6 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdministradorService } from '../../services/administrador.service';
 import { ActivatedRoute } from '@angular/router';
 import { Administrador } from '../../model/administrador';
+import { LoginComponent } from '../../../login/login/login.component';
+import { LoginService } from '../../../login/services/login.service';
 
 @Component({
   selector: 'app-administrador-form',
@@ -26,12 +28,14 @@ export class AdministradorFormComponent implements OnInit {
     private administradorFormService: AdministradorService,
     private _snackBar: MatSnackBar,
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private login: LoginService
   ) {
     // this.form
   }
 
   ngOnInit(): void {
+    this.login.loginTest();
     const administrador: Administrador = this.route.snapshot.data['administrador'];
     // console.log(administrador);
 

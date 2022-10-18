@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
 import { Location } from '@angular/common';
+import { LoginService } from '../../../login/services/login.service';
 
 @Component({
   selector: 'app-administrador-search',
@@ -28,12 +29,14 @@ export class AdministradorSearchComponent implements OnInit {
     private serviceAdministrador: AdministradorService,
     public dialog: MatDialog,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private login: LoginService
     ) {
       this.administradores$ = new Observable<Administrador[]>();
     }
 
   ngOnInit(): void {
+    this.login.loginTest();
   }
 
   onSubmit() {
