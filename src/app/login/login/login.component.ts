@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['administradores']);
       this._snackBar.open('Login realizado com sucesso!', '', {duration: 5000});
     }else {
-      this._snackBar.open('Erro! Verifique os dados inseridos.', '', {duration: 5000});
+      this._snackBar.open('Confirme os dados inseridos.', '', {duration: 5000});
     }
 
   }
