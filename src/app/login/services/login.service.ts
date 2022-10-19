@@ -25,6 +25,7 @@ export class LoginService {
         if((y.usuario == administrador.usuario) && (y.senha == administrador.senha)) {
           // console.log('Verified User');
           this.logged = true;
+          this.router.navigate(['administradores']);
         }else {
           // console.log('Access Denied');
         }

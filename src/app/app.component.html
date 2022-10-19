@@ -2,37 +2,21 @@
   <span>Projeto Clínica</span>
 </mat-toolbar>
 
-<div class="main-container">
+<div class="main-container" *ngIf="login.logged == true">
   <mat-card class="example-card" (click)="onAdministrator()">
     <mat-card-title>Administradores</mat-card-title>
-    <mat-card-content>
-      <p>Lista de Administradores</p>
-      <p>Acesse a página com uma lista de todos os nossos administradores cadastrados no sistema. Também é possível criar, editar e remover administradores.</p>
-    </mat-card-content>
   </mat-card>
 
   <mat-card class="example-card" (click)="onDoctor()">
     <mat-card-title>Médicos</mat-card-title>
-    <mat-card-content>
-      <p>Lista de Médicos</p>
-      <p>Acesse a página com uma lista de todos os nossos médicos cadastrados no sistema. Também é possível criar, editar e remover médicos.</p>
-    </mat-card-content>
   </mat-card>
 
   <mat-card class="example-card" (click)="onPatient()">
     <mat-card-title>Pacientes</mat-card-title>
-    <mat-card-content>
-      <p>Lista de Pacientes</p>
-      <p>Acesse a página com uma lista de todos os nossos pacientes cadastrados no sistema. Também é possível criar, editar e remover pacientes.</p>
-    </mat-card-content>
   </mat-card>
 
   <mat-card class="example-card" (click)="onAppointment()">
     <mat-card-title>Consultas</mat-card-title>
-    <mat-card-content>
-      <p>Lista de Consultas</p>
-      <p>Acesse a página com uma lista de todas as nossas consultas cadastradas no sistema. Também é possível criar, editar e remover consultas.</p>
-    </mat-card-content>
   </mat-card>
 </div>
 

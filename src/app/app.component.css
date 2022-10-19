@@ -2,7 +2,7 @@
   max-width: 400px;
   max-height: 85px;
   text-align: justify;
-  background-color: rgba(122, 143, 201, 0.932);
+  background-color: #7A8FC9EE;
 }
 
 .example-card p {
@@ -11,7 +11,8 @@
 
 .main-container {
   display: flex;
-  background-color: rgba(122, 143, 201, 0.932);
+  justify-content: space-around;
+  background-color: #7A8FC9EE;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
