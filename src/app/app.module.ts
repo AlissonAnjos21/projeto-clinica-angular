@@ -23,7 +23,7 @@ import { AppMaterialModule } from './shared/app-material/app-material.module';
     LoginModule,
     AppMaterialModule
   ],
-  providers: [LoginService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

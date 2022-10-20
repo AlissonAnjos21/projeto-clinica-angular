@@ -6,9 +6,9 @@ import { ErrorDialogComponent } from '../../../shared/components/error-dialog/er
 import { Administrador } from '../../model/administrador';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
 import { Location } from '@angular/common';
 import { LoginService } from '../../../login/services/login.service';
+import { AdministradorDeleteDialogComponent } from '../../components/administrador-delete-dialog/administrador-delete-dialog.component';
 
 @Component({
   selector: 'app-administrador-search',
@@ -76,7 +76,7 @@ export class AdministradorSearchComponent implements OnInit {
   }
 
   onDelete(administrador: Administrador) {
-    this.dialog.open(DeleteDialogComponent, {data: administrador.id});
+    this.dialog.open(AdministradorDeleteDialogComponent, {data: administrador.id});
   }
 
   private onError(errorMsg: string) {
