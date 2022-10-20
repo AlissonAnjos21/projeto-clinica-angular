@@ -8,6 +8,9 @@ const routes: Routes = [
   },
   { path: 'administradores',
     loadChildren: () => import('./administrador/administrador.module').then(m => m.AdministradorModule)
+  },
+  { path: 'consultas',
+    loadChildren: () => import('./consulta/consulta.module').then(m => m.ConsultaModule)
   }
 ];
 

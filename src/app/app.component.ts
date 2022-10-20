@@ -30,7 +30,7 @@ export class AppComponent {
 
   onAppointment() {
     // console.log('Working...');
-    this.router.navigate(['']);
+    this.router.navigate(['consultas']);
   }
 
 }
