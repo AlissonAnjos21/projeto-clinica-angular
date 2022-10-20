@@ -9,6 +9,7 @@ import { ConsultaSearchComponent } from './containers/consulta-search/consulta-s
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { ConsultaDeleteDialogComponent } from './components/consulta-delete-dialog/consulta-delete-dialog.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
     ConsultaListComponent,
     ConsultaComponent,
     ConsultaFormComponent,
-    ConsultaSearchComponent
+    ConsultaSearchComponent,
+    ConsultaDeleteDialogComponent
   ],
   imports: [
     CommonModule,
