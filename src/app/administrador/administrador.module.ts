@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdministradorListComponent } from './components/administrador-list/administrador-list.component';
 import { AdministradorSearchComponent } from './containers/administrador-search/administrador-search.component';
 import { FormsModule } from '@angular/forms';
+import { AdministradorDeleteDialogComponent } from './components/administrador-delete-dialog/administrador-delete-dialog.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     AdministradorComponent,
     AdministradorFormComponent,
     AdministradorListComponent,
-    AdministradorSearchComponent
+    AdministradorSearchComponent,
+    AdministradorDeleteDialogComponent
   ],
   imports: [
     CommonModule,

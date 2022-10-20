@@ -5,9 +5,9 @@ import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
 import { LoginService } from '../../../login/services/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AdministradorDeleteDialogComponent } from '../../components/administrador-delete-dialog/administrador-delete-dialog.component';
 
 @Component({
   selector: 'app-administrador',
@@ -58,7 +58,7 @@ export class AdministradorComponent implements OnInit {
 
   onDelete(administrador: Administrador) {
     // console.log(administrador);
-    this.dialog.open(DeleteDialogComponent, {data: administrador.id});
+    this.dialog.open(AdministradorDeleteDialogComponent, {data: administrador.id});
   }
 
   onSearch() {
