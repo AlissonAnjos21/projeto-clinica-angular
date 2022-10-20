@@ -67,7 +67,7 @@ export class AdministradorFormComponent implements OnInit {
   }
 
   private onSuccess() {
-    this._snackBar.open('Cadastro realizado com sucesso!', '', {duration: 5000});
+    this._snackBar.open('Ação realizada com sucesso!', '', {duration: 5000});
     this.onCancel(); // Volta
   }
 
