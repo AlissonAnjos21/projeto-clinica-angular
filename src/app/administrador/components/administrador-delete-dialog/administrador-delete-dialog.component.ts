@@ -12,7 +12,7 @@ export class AdministradorDeleteDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: string,
-    private service: AdministradorService,
+    private serviceAdministrador: AdministradorService,
     private _snackBar: MatSnackBar
     ) {
       // console.log(data);
@@ -22,7 +22,7 @@ export class AdministradorDeleteDialogComponent implements OnInit {
   }
 
   onAgree() {
-    this.service.delete(this.data).subscribe({next: result => {this.onSuccess();}, error: error => {this.onError();}});
+    this.serviceAdministrador.delete(this.data).subscribe({next: result => {this.onSuccess();}, error: error => {this.onError();}});
 
   }
 
