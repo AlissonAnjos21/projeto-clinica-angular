@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdministradorService } from '../../services/administrador.service';
 import { ActivatedRoute } from '@angular/router';
 import { Administrador } from '../../model/administrador';
-import { LoginComponent } from '../../../login/login/login.component';
 import { LoginService } from '../../../login/services/login.service';
 
 @Component({

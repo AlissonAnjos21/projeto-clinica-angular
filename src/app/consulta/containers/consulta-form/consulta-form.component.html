@@ -1,1 +1,43 @@
-<p>consulta-form works!</p>
+<mat-card>
+  <mat-toolbar style="background-color: #c3a9e2;">{{action}} Administrador:</mat-toolbar>
+  <mat-card-content>
+      <form [formGroup]="form" class="min-width">
+          <mat-form-field class="full-width">
+              <input matInput placeholder="Id Médico" formControlName="idMedico">
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Id Paciente" formControlName="idPaciente">
+              <mat-icon matSuffix>key</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Data" formControlName="data">
+              <mat-icon matSuffix>key</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Hora" formControlName="hora">
+              <mat-icon matSuffix>key</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Valor" formControlName="valor">
+              <mat-icon matSuffix>key</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Forma de Pagamento" formControlName="formaPagamento">
+              <mat-icon matSuffix>key</mat-icon>
+            </mat-form-field>
+
+      </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+      <button mat-raised-button style="color: #3192ca;" (click)="onSubmit()">{{action}}</button>
+      <button mat-raised-button style="color:#f84434" (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
+
