@@ -6,6 +6,9 @@ import { ConsultaListComponent } from './components/consulta-list/consulta-list.
 import { ConsultaComponent } from './containers/consulta/consulta.component';
 import { ConsultaFormComponent } from './containers/consulta-form/consulta-form.component';
 import { ConsultaSearchComponent } from './containers/consulta-search/consulta-search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 
 @NgModule({
@@ -17,7 +20,11 @@ import { ConsultaSearchComponent } from './containers/consulta-search/consulta-s
   ],
   imports: [
     CommonModule,
-    ConsultaRoutingModule
+    ConsultaRoutingModule,
+    AppMaterialModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ConsultaModule { }

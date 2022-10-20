@@ -44,7 +44,7 @@ export class AdministradorService {
   }
 
   delete(id: string) {
-    console.log("It's Working");
+    // console.log("It's Working");
     return this.httpClient.delete(`${this.API}/${id}`).pipe(first());
   }
 
