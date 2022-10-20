@@ -7,7 +7,7 @@ import { LoginService } from '../../../login/services/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Consulta } from '../../model/consulta';
-import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
+import { ConsultaDeleteDialogComponent } from '../../components/consulta-delete-dialog/consulta-delete-dialog.component';
 
 @Component({
   selector: 'app-consulta',
@@ -51,8 +51,7 @@ export class ConsultaComponent implements OnInit {
   }
 
   onDelete(consulta: Consulta) {
-    // console.log(administrador);
-    this.dialog.open(DeleteDialogComponent, {data: consulta.id});
+    this.dialog.open(ConsultaDeleteDialogComponent, {data: consulta.id});
   }
 
   onSearch() {
