@@ -6,6 +6,7 @@ import { MedicoListComponent } from './components/medico-list/medico-list.compon
 import { MedicoComponent } from './containers/medico/medico.component';
 import { MedicoFormComponent } from './containers/medico-form/medico-form.component';
 import { MedicoSearchComponent } from './containers/medico-search/medico-search.component';
+import { MedicoDeleteDialogComponent } from './components/medico-delete-dialog/medico-delete-dialog.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MedicoSearchComponent } from './containers/medico-search/medico-search.
     MedicoListComponent,
     MedicoComponent,
     MedicoFormComponent,
-    MedicoSearchComponent
+    MedicoSearchComponent,
+    MedicoDeleteDialogComponent
   ],
   imports: [
     CommonModule,
