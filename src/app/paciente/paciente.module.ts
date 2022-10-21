@@ -6,6 +6,7 @@ import { PacienteListComponent } from './components/paciente-list/paciente-list.
 import { PacienteComponent } from './containers/paciente/paciente.component';
 import { PacienteFormComponent } from './containers/paciente-form/paciente-form.component';
 import { PacienteSearchComponent } from './containers/paciente-search/paciente-search.component';
+import { PacienteDeleteDialogComponent } from './components/paciente-delete-dialog/paciente-delete-dialog.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PacienteSearchComponent } from './containers/paciente-search/paciente-s
     PacienteListComponent,
     PacienteComponent,
     PacienteFormComponent,
-    PacienteSearchComponent
+    PacienteSearchComponent,
+    PacienteDeleteDialogComponent
   ],
   imports: [
     CommonModule,
