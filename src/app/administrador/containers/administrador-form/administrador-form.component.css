@@ -3,6 +3,7 @@ mat-card {
     margin: 2em auto;
     text-align: center;
     border-radius: 30px;
+    padding-bottom: 3.5em;
 }
 
 mat-toolbar {
