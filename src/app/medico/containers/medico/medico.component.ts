@@ -16,7 +16,7 @@ import { Medico } from '../../model/medico';
 })
 export class MedicoComponent implements OnInit {
 
-  medicos$: Observable<[Medico]>;
+  medicos$: Observable<Medico[]>;
 
   constructor(
     private medicoService: MedicoService,
