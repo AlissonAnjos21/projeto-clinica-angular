@@ -46,19 +46,19 @@
   <ng-container matColumnDef="actions">
       <!-- Add Column -->
       <mat-header-cell *matHeaderCellDef class="action-column">
-          <button mat-mini-fab style="background-color: #29c252;" aria-label="Adicionar Administrador">
+          <button mat-mini-fab style="background-color: #29c252;" aria-label="Adicionar Consulta">
               <mat-icon (click)="onAdd()" title="Adicionar">add</mat-icon>
           </button>
       </mat-header-cell>
 
       <mat-cell *matCellDef="let consulta" class="action-column">
           <!-- Edit Column -->
-          <button mat-icon-button style="color: #cc690d;" aria-label="Editar Administrador" title="Editar">
+          <button mat-icon-button style="color: #cc690d;" aria-label="Editar Consulta" title="Editar">
               <mat-icon (click)="onEdit(consulta)">edit</mat-icon>
           </button>
 
           <!-- Remove Column -->
-          <button mat-icon-button color="warn" aria-label="Apagar Administrador" title="Remover">
+          <button mat-icon-button color="warn" aria-label="Apagar Consulta" title="Remover">
               <mat-icon (click)="onDelete(consulta)">delete</mat-icon>
           </button>
       </mat-cell>
