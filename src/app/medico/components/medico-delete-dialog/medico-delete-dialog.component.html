@@ -1,1 +1,8 @@
-<p>medico-delete-dialog works!</p>
+<h1 mat-dialog-title class="center">Remover Item</h1>
+<div mat-dialog-content>
+  Você realmente gostaria de remover o item com <p class="center" style="font-weight: bold;">ID: {{data}}</p>
+</div>
+<div mat-dialog-actions class="center">
+  <button mat-raised-button mat-dialog-close color="warn">Não</button>
+  <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(32, 170, 152);" (click)="onAgree()">Sim</button>
+</div>
