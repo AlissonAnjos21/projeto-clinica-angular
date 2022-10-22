@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Medico } from '../../model/medico';
 
 @Component({
   selector: 'app-medico-list',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicoListComponent implements OnInit {
 
+  readonly displayedColumns = ['id', 'nome', 'cpf', 'cnpj', 'crm', 'dataNascimento', 'endereco', 'email', 'telefone', 'tipoContrato', 'especialidade', 'actions'];
+  @Input() medicos: Medico[] = [];
+  @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
+  @Output() delete = new EventEmitter(false);
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onAdd() {
+    this.add.emit(true);
+  }
+
+  onEdit(medico: Medico) {
+    this.edit.emit(medico);
+  }
+
+  onDelete(medico: Medico) {
+    this.delete.emit(medico);
   }
 
 }

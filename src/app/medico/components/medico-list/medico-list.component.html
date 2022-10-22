@@ -1,1 +1,94 @@
-<p>medico-list works!</p>
+<mat-table [dataSource]="medicos">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id: </mat-header-cell>
+      <mat-cell *matCellDef="let medico"> {{medico.id}} </mat-cell>
+  </ng-container>
+
+  <!-- Nome Column -->
+  <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef> Nome: </mat-header-cell>
+      <mat-cell *matCellDef="let medico"> {{medico.nome}} </mat-cell>
+  </ng-container>
+
+  <!-- CPF Column -->
+  <ng-container matColumnDef="cpf">
+    <mat-header-cell *matHeaderCellDef> CPF: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.cpf}} </mat-cell>
+  </ng-container>
+
+  <!-- CNPJ Column -->
+  <ng-container matColumnDef="cnpj">
+    <mat-header-cell *matHeaderCellDef> CNPJ: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.cnpj}} </mat-cell>
+  </ng-container>
+
+  <!-- CRM Column -->
+  <ng-container matColumnDef="crm">
+    <mat-header-cell *matHeaderCellDef> CRM: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.crm}} </mat-cell>
+  </ng-container>
+
+  <!-- DataNascimento Column -->
+  <ng-container matColumnDef="dataNascimento">
+    <mat-header-cell *matHeaderCellDef> Data de Nascimento: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.dataNascimento}} </mat-cell>
+  </ng-container>
+
+  <!-- Endereco Column -->
+  <ng-container matColumnDef="endereco">
+    <mat-header-cell *matHeaderCellDef> Endereço: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.endereco}} </mat-cell>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.email}} </mat-cell>
+  </ng-container>
+
+  <!-- Telefone Column -->
+  <ng-container matColumnDef="telefone">
+    <mat-header-cell *matHeaderCellDef> Telefone: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.telefone}} </mat-cell>
+  </ng-container>
+
+  <!-- tipoContrato Column -->
+  <ng-container matColumnDef="tipoContrato">
+    <mat-header-cell *matHeaderCellDef> Tipo de Contrato: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.tipoContrato}} </mat-cell>
+  </ng-container>
+
+  <!-- Especialidade Column -->
+  <ng-container matColumnDef="especialidade">
+    <mat-header-cell *matHeaderCellDef> Especialidade: </mat-header-cell>
+    <mat-cell *matCellDef="let medico"> {{medico.especialidade}} </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+      <!-- Add Column -->
+      <mat-header-cell *matHeaderCellDef class="action-column">
+          <button mat-mini-fab style="background-color: #29c252;" aria-label="Adicionar Medico">
+              <mat-icon (click)="onAdd()" title="Adicionar">add</mat-icon>
+          </button>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let medico" class="action-column">
+          <!-- Edit Column -->
+          <button mat-icon-button style="color: #cc690d;" aria-label="Editar Medico" title="Editar">
+              <mat-icon (click)="onEdit(medico)">edit</mat-icon>
+          </button>
+
+          <!-- Remove Column -->
+          <button mat-icon-button color="warn" aria-label="Apagar Medico" title="Remover">
+              <mat-icon (click)="onDelete(medico)">delete</mat-icon>
+          </button>
+      </mat-cell>
+
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
