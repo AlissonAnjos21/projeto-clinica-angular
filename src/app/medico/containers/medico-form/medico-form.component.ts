@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
-import { ConsultaService } from '../../../consulta/services/consulta.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { LoginService } from '../../../login/services/login.service';
 import { Medico } from '../../model/medico';
+import { MedicoService } from '../../services/medico.service';
 
 @Component({
   selector: 'app-medico-form',
@@ -33,7 +33,7 @@ export class MedicoFormComponent implements OnInit {
 
   constructor(
     private formBuilder: NonNullableFormBuilder,
-    private medicoFormService: ConsultaService,
+    private medicoFormService: MedicoService,
     private _snackBar: MatSnackBar,
     private location: Location,
     private route: ActivatedRoute,
