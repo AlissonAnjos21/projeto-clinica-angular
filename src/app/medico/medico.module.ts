@@ -7,6 +7,9 @@ import { MedicoComponent } from './containers/medico/medico.component';
 import { MedicoFormComponent } from './containers/medico-form/medico-form.component';
 import { MedicoSearchComponent } from './containers/medico-search/medico-search.component';
 import { MedicoDeleteDialogComponent } from './components/medico-delete-dialog/medico-delete-dialog.component';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +22,11 @@ import { MedicoDeleteDialogComponent } from './components/medico-delete-dialog/m
   ],
   imports: [
     CommonModule,
-    MedicoRoutingModule
+    MedicoRoutingModule,
+    AppMaterialModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class MedicoModule { }
