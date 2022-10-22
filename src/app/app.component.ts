@@ -20,7 +20,7 @@ export class AppComponent {
 
   onDoctor() {
     // console.log('Working...');
-    this.router.navigate(['']);
+    this.router.navigate(['medicos']);
   }
 
   onPatient() {
