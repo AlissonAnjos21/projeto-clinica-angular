@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { LoginService } from '../../../login/services/login.service';
 import { AdministradorDeleteDialogComponent } from '../../components/administrador-delete-dialog/administrador-delete-dialog.component';
+import { AdministradorViewComponent } from '../../components/administrador-view/administrador-view.component';
 
 @Component({
   selector: 'app-administrador-search',
@@ -69,6 +70,10 @@ export class AdministradorSearchComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['administradores/new']);
+  }
+
+  onView(administrador: Administrador) {
+    this.dialog.open(AdministradorViewComponent, {data: administrador})
   }
 
   onEdit(administrador: Administrador) {

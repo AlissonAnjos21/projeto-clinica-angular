@@ -29,7 +29,7 @@
   </mat-toolbar>
 
   <div class="column-flex mat-elevation-z8">
-    <app-administrador-list *ngIf="administradores$ | async as administradores; else loading "[administradores]="administradores" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)">
+    <app-administrador-list *ngIf="administradores$ | async as administradores; else loading "[administradores]="administradores" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)" (view)="onView($event)">
 
     </app-administrador-list>
 
