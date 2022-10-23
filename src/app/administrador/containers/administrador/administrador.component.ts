@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../../../login/services/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdministradorDeleteDialogComponent } from '../../components/administrador-delete-dialog/administrador-delete-dialog.component';
+import { AdministradorViewComponent } from '../../components/administrador-view/administrador-view.component';
 
 @Component({
   selector: 'app-administrador',
@@ -50,6 +51,10 @@ export class AdministradorComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['new'], {relativeTo: this.route}); // ralativeTo - informa que a rota é relativa a rota em que já se está
+  }
+
+  onView(administrador: Administrador) {
+    this.dialog.open(AdministradorViewComponent, {data: administrador})
   }
 
   onEdit(administrador: Administrador) {

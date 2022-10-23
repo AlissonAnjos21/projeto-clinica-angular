@@ -11,6 +11,7 @@ import { AdministradorListComponent } from './components/administrador-list/admi
 import { AdministradorSearchComponent } from './containers/administrador-search/administrador-search.component';
 import { FormsModule } from '@angular/forms';
 import { AdministradorDeleteDialogComponent } from './components/administrador-delete-dialog/administrador-delete-dialog.component';
+import { AdministradorViewComponent } from './components/administrador-view/administrador-view.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AdministradorDeleteDialogComponent } from './components/administrador-d
     AdministradorFormComponent,
     AdministradorListComponent,
     AdministradorSearchComponent,
-    AdministradorDeleteDialogComponent
+    AdministradorDeleteDialogComponent,
+    AdministradorViewComponent
   ],
   imports: [
     CommonModule,

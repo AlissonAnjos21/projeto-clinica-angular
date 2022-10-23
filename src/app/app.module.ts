@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginService } from './login/services/login.service';
 import { LoginModule } from './login/login.module';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 
