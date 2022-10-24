@@ -65,6 +65,11 @@ export class PacienteFormComponent implements OnInit {
       this.action = 'Editar';
     }
 
+    if(this.action == 'Cadastrar') {
+      this.form.value.alergias?.pop();
+      this.form.value.doencas?.pop();
+    }
+
   }
 
   onSubmit() {
