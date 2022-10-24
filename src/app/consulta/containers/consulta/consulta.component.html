@@ -7,7 +7,7 @@
   </mat-toolbar>
 
   <div class="column-flex mat-elevation-z8">
-      <app-consulta-list *ngIf="consultas$ | async as consultas; else loading "[consultas]="consultas" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)">
+      <app-consulta-list *ngIf="consultas$ | async as consultas; else loading "[consultas]="consultas" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)" (view)="onView($event)">
 
       </app-consulta-list>
 

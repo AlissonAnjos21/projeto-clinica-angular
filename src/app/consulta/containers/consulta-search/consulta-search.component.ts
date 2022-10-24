@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
 import { Observable, of, toArray, catchError } from 'rxjs';
 import { ConsultaDeleteDialogComponent } from '../../components/consulta-delete-dialog/consulta-delete-dialog.component';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
+import { ConsultaViewComponent } from '../../components/consulta-view/consulta-view.component';
 
 @Component({
   selector: 'app-consulta-search',
@@ -78,6 +79,10 @@ export class ConsultaSearchComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['consultas/new']);
+  }
+
+  onView(consulta: Consulta) {
+    this.dialog.open(ConsultaViewComponent, {data: consulta})
   }
 
   onEdit(consulta: Consulta) {

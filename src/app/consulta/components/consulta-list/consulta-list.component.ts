@@ -13,6 +13,7 @@ export class ConsultaListComponent implements OnInit {
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
   @Output() delete = new EventEmitter(false);
+  @Output() view = new EventEmitter(false);
 
   constructor() { }
 
@@ -29,6 +30,10 @@ export class ConsultaListComponent implements OnInit {
 
   onDelete(consulta: Consulta) {
     this.delete.emit(consulta);
+  }
+
+  onView(consulta: Consulta) {
+    this.view.emit(consulta);
   }
 
 }

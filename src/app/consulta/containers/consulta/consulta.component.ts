@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Consulta } from '../../model/consulta';
 import { ConsultaDeleteDialogComponent } from '../../components/consulta-delete-dialog/consulta-delete-dialog.component';
+import { ConsultaViewComponent } from '../../components/consulta-view/consulta-view.component';
 
 @Component({
   selector: 'app-consulta',
@@ -44,6 +45,10 @@ export class ConsultaComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  onView(consulta: Consulta) {
+    this.dialog.open(ConsultaViewComponent, {data: consulta})
   }
 
   onEdit(consulta: Consulta) {
