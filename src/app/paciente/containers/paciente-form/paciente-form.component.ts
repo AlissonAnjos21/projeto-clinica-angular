@@ -86,4 +86,20 @@ export class PacienteFormComponent implements OnInit {
     this._snackBar.open('Erro! Falha no cadastro.', '', {duration: 5000});
   }
 
+  onAddAllergy(item: string) {
+    this.form.value.doencas?.push(item);
+  }
+
+  onRemoveAllergy() {
+    this.form.value.doencas?.pop();
+  }
+
+  onAddSick(item: string) {
+    this.form.value.doencas?.push(item);
+  }
+
+  onRemoveSick() {
+    this.form.value.doencas?.pop();
+  }
+
 }

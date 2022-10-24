@@ -1,1 +1,45 @@
-<p>paciente-list works!</p>
+<mat-table [dataSource]="pacientes">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id: </mat-header-cell>
+      <mat-cell *matCellDef="let paciente"> {{paciente.id}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef> Nome: </mat-header-cell>
+      <mat-cell *matCellDef="let paciente"> {{paciente.nome}} </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+      <!-- Add Column -->
+      <mat-header-cell *matHeaderCellDef class="action-column">
+          <button mat-mini-fab style="background-color: #29c252;" aria-label="Adicionar Paciente">
+              <mat-icon (click)="onAdd()" title="Adicionar">add</mat-icon>
+          </button>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let paciente" class="action-column">
+          <!-- View Column -->
+          <button mat-icon-button style="color: #0dbfcc;" aria-label="Ver Paciente" title="Ver">
+            <mat-icon (click)="onView(paciente)">visibility</mat-icon>
+          </button>
+
+          <!-- Edit Column -->
+          <button mat-icon-button style="color: #cc690d;" aria-label="Editar Paciente" title="Editar">
+              <mat-icon (click)="onEdit(paciente)">edit</mat-icon>
+          </button>
+
+          <!-- Remove Column -->
+          <button mat-icon-button color="warn" aria-label="Apagar Paciente" title="Remover">
+              <mat-icon (click)="onDelete(paciente)">delete</mat-icon>
+          </button>
+      </mat-cell>
+
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

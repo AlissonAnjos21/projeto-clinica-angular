@@ -1,1 +1,83 @@
-<p>paciente-form works!</p>
+<mat-card>
+  <mat-toolbar style="background-color: #c3a9e2;">{{action}} Paciente:</mat-toolbar>
+  <mat-card-content>
+      <form [formGroup]="form" class="min-width">
+          <mat-form-field class="full-width">
+              <input matInput placeholder="Nome" formControlName="nome">
+              <mat-icon matSuffix>face</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="CPF" formControlName="cpf">
+              <mat-icon matSuffix>person_pin_circle</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="E-mail" formControlName="email">
+              <mat-icon matSuffix>alternate_email</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Data de Nascimento" formControlName="dataNascimento">
+              <mat-icon matSuffix>stroller</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Telefone" formControlName="telefone">
+              <mat-icon matSuffix>call</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Telefone Familiar" formControlName="telefoneFamiliar">
+              <mat-icon matSuffix>phone_forwarded</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Ocupação" formControlName="ocupacao">
+              <mat-icon matSuffix>badge</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Endereço" formControlName="endereco">
+              <mat-icon matSuffix>home</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Plano de Saúde" formControlName="planoSaude">
+              <mat-icon matSuffix>health_and_safety</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Alergias" #boxAllergies>
+              <mat-icon matSuffix>report</mat-icon>
+              <button mat-stroked-button (click)="onAddAllergy(boxAllergies.value)">Adicionar</button>
+              <button mat-stroked-button color="warn" (click)="onRemoveAllergy()">Remover Último</button>
+            </mat-form-field>
+
+            <div *ngIf="action == 'Editar'">
+              <ul>
+                <li *ngFor="let alergia of form.value.alergias"></li>
+              </ul>
+            </div>
+
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Doenças" #boxSick>
+              <mat-icon matSuffix>sick</mat-icon>
+              <button mat-stroked-button (click)="onAddSick(boxSick.value)">Adicionar</button>
+              <button mat-stroked-button color="warn" (click)="onRemoveSick()">Remover Último</button>
+            </mat-form-field>
+
+            <div *ngIf="action == 'Editar'">
+              <ul>
+                <li *ngFor="let doenca of form.value.doencas"></li>
+              </ul>
+            </div>
+
+      </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+      <button mat-raised-button style="color: #3192ca;" (click)="onSubmit()">{{action}}</button>
+      <button mat-raised-button style="color:#f84434" (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
