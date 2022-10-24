@@ -7,6 +7,10 @@ import { PacienteComponent } from './containers/paciente/paciente.component';
 import { PacienteFormComponent } from './containers/paciente-form/paciente-form.component';
 import { PacienteSearchComponent } from './containers/paciente-search/paciente-search.component';
 import { PacienteDeleteDialogComponent } from './components/paciente-delete-dialog/paciente-delete-dialog.component';
+import { PacienteViewComponent } from './components/paciente-view/paciente-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 
 @NgModule({
@@ -15,11 +19,16 @@ import { PacienteDeleteDialogComponent } from './components/paciente-delete-dial
     PacienteComponent,
     PacienteFormComponent,
     PacienteSearchComponent,
-    PacienteDeleteDialogComponent
+    PacienteDeleteDialogComponent,
+    PacienteViewComponent
   ],
   imports: [
     CommonModule,
-    PacienteRoutingModule
+    PacienteRoutingModule,
+    AppMaterialModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class PacienteModule { }
