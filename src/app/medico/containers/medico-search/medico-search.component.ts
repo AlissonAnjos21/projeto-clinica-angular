@@ -9,6 +9,7 @@ import { LoginService } from '../../../login/services/login.service';
 import { Location } from '@angular/common';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { MedicoDeleteDialogComponent } from '../../components/medico-delete-dialog/medico-delete-dialog.component';
+import { MedicoViewComponent } from '../../components/medico-view/medico-view.component';
 
 @Component({
   selector: 'app-medico-search',
@@ -71,6 +72,10 @@ export class MedicoSearchComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['medicos/new']);
+  }
+
+  onView(medico: Medico) {
+    this.dialog.open(MedicoViewComponent, {data: medico})
   }
 
   onEdit(medico: Medico) {

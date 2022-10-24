@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Medico } from '../../model/medico';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-medico-view',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicoViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: Medico
+  ) { }
 
   ngOnInit(): void {
   }

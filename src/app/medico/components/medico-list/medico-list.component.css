@@ -1,12 +1,8 @@
 .action-column {
-  flex: 0 0 75px;
+  flex: 0 0 100px;
 }
 
 mat-header-cell {
   font-weight: bold;
   font-size: 1.1em;
-}
-
-.list-items {
-  padding-right: 1.5em;
 }

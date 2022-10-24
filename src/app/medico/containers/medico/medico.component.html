@@ -7,7 +7,7 @@
   </mat-toolbar>
 
   <div class="column-flex mat-elevation-z8">
-      <app-medico-list *ngIf="medicos$ | async as medicos; else loading "[medicos]="medicos" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)">
+      <app-medico-list *ngIf="medicos$ | async as medicos; else loading "[medicos]="medicos" (add)="onAdd()" (edit)="onEdit($event)" (delete)="onDelete($event)" (view)="onView($event)">
 
       </app-medico-list>
 

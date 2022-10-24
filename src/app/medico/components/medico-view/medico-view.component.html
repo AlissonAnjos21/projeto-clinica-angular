@@ -1,1 +1,38 @@
-<p>medico-view works!</p>
+<h2 mat-dialog-title>Informações do Médico</h2>
+<mat-dialog-content class="mat-typography">
+  <h3 class="special-p">Id do Administrador:</h3>
+  <p>{{data.id}}</p>
+
+  <h3 class="special-p">Nome do Médico:</h3>
+  <p>{{data.nome}}</p>
+
+  <h3 class="special-p">CPF do Médico:</h3>
+  <p>{{data.cpf}}</p>
+
+  <h3 class="special-p">CNPJ do Médico:</h3>
+  <p>{{data.cnpj}}</p>
+
+  <h3 class="special-p">CRM do Médico:</h3>
+  <p>{{data.crm}}</p>
+
+  <h3 class="special-p">Data de Nascimento do Médico:</h3>
+  <p>{{data.dataNascimento}}</p>
+
+  <h3 class="special-p">Endereço do Médico:</h3>
+  <p>{{data.endereco}}</p>
+
+  <h3 class="special-p">E-mail do Médico:</h3>
+  <p>{{data.email}}</p>
+
+  <h3 class="special-p">Telefone do Médico:</h3>
+  <p>{{data.telefone}}</p>
+
+  <h3 class="special-p">Tipo de Contrato do Médico:</h3>
+  <p>{{data.tipoContrato}}</p>
+
+  <h3 class="special-p">Especialidade do Médico:</h3>
+  <p>{{data.especialidade}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

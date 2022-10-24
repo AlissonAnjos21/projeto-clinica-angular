@@ -8,6 +8,7 @@ import { of, catchError, Observable } from 'rxjs';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { MedicoDeleteDialogComponent } from '../../components/medico-delete-dialog/medico-delete-dialog.component';
 import { Medico } from '../../model/medico';
+import { MedicoViewComponent } from '../../components/medico-view/medico-view.component';
 
 @Component({
   selector: 'app-medico',
@@ -44,6 +45,10 @@ export class MedicoComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  onView(medico: Medico) {
+    this.dialog.open(MedicoViewComponent, {data: medico})
   }
 
   onEdit(medico: Medico) {
