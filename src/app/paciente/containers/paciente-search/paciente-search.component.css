@@ -1,0 +1,48 @@
+mat-card {
+  border-radius: 15px;
+  max-width: 70%;
+  text-align: center;
+  margin: 2em auto;
+}
+
+mat-toolbar {
+  border-radius: 5px;
+}
+
+mat-form-field mat-label, mat-select, input {
+
+  color: white;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.21);
+  padding: 21px;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.min-width {
+  width: 100%;
+  min-width: 150px;
+}
+
+.form-properties {
+margin-top: 1.5em;
+display: flex;
+align-items: center;
+}
+
+.children{
+  margin-right: 1.5em;
+}
+
+.back {
+  margin-top: 2em;
+}
