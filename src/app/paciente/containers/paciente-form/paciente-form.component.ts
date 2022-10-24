@@ -87,11 +87,11 @@ export class PacienteFormComponent implements OnInit {
   }
 
   onAddAllergy(item: string) {
-    this.form.value.doencas?.push(item);
+    this.form.value.alergias?.push(item);
   }
 
   onRemoveAllergy() {
-    this.form.value.doencas?.pop();
+    this.form.value.alergias?.pop();
   }
 
   onAddSick(item: string) {

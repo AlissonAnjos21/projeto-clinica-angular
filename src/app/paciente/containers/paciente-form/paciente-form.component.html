@@ -47,30 +47,34 @@
               <mat-icon matSuffix>health_and_safety</mat-icon>
             </mat-form-field>
 
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Alergias" #boxAllergies>
-              <mat-icon matSuffix>report</mat-icon>
-              <button mat-stroked-button (click)="onAddAllergy(boxAllergies.value)">Adicionar</button>
+            <div>
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Alergias" #boxAllergies>
+                <mat-icon matSuffix>report</mat-icon>
+              </mat-form-field>
+              <button mat-stroked-button (click)="onAddAllergy(boxAllergies.value)" (click)="boxAllergies.value=''">Adicionar</button>
               <button mat-stroked-button color="warn" (click)="onRemoveAllergy()">Remover Último</button>
-            </mat-form-field>
 
-            <div *ngIf="action == 'Editar'">
-              <ul>
-                <li *ngFor="let alergia of form.value.alergias"></li>
-              </ul>
+              <div>
+                <ul>
+                  <li *ngFor="let alergia of form.value.alergias">{{alergia}}</li>
+                </ul>
+              </div>
             </div>
 
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Doenças" #boxSick>
-              <mat-icon matSuffix>sick</mat-icon>
-              <button mat-stroked-button (click)="onAddSick(boxSick.value)">Adicionar</button>
+            <div>
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Doenças" #boxSick>
+                <mat-icon matSuffix>sick</mat-icon>
+              </mat-form-field>
+              <button mat-stroked-button (click)="onAddSick(boxSick.value)" (click)="boxSick.value=''">Adicionar</button>
               <button mat-stroked-button color="warn" (click)="onRemoveSick()">Remover Último</button>
-            </mat-form-field>
 
-            <div *ngIf="action == 'Editar'">
-              <ul>
-                <li *ngFor="let doenca of form.value.doencas"></li>
-              </ul>
+              <div>
+                <ul>
+                  <li *ngFor="let doenca of form.value.doencas">{{doenca}}</li>
+                </ul>
+              </div>
             </div>
 
       </form>
