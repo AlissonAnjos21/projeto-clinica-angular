@@ -1,1 +1,41 @@
-<p>paciente-view works!</p>
+<h2 mat-dialog-title>Informações do Paciente</h2>
+<mat-dialog-content class="mat-typography">
+  <h3 class="special-p">Id do Paciente:</h3>
+  <p>{{data.id}}</p>
+
+  <h3 class="special-p">Nome do Paciente:</h3>
+  <p>{{data.nome}}</p>
+
+  <h3 class="special-p">CPF do Paciente:</h3>
+  <p>{{data.cpf}}</p>
+
+  <h3 class="special-p">E-mail do Paciente:</h3>
+  <p>{{data.email}}</p>
+
+  <h3 class="special-p">Data de Nascimento do Paciente:</h3>
+  <p>{{data.dataNascimento}}</p>
+
+  <h3 class="special-p">Telefone do Paciente:</h3>
+  <p>{{data.telefone}}</p>
+
+  <h3 class="special-p">Telefone dos Familiares do Paciente:</h3>
+  <p>{{data.telefoneFamiliar}}</p>
+
+  <h3 class="special-p">Ocupação do Paciente:</h3>
+  <p>{{data.ocupacao}}</p>
+
+  <h3 class="special-p">Endereço do Paciente:</h3>
+  <p>{{data.endereco}}</p>
+
+  <h3 class="special-p">Plano de Saúde do Paciente:</h3>
+  <p>{{data.planoSaude}}</p>
+
+  <h3 class="special-p">Alergias do Paciente:</h3>
+  <div><ul><li *ngFor="let alergia of data.alergias">{{alergia}}</li></ul></div>
+
+  <h3 class="special-p">Doenças do Paciente:</h3>
+  <div><ul><li *ngFor="let doenca of data.doencas">{{doenca}}</li></ul></div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>
