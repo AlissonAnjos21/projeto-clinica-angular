@@ -66,7 +66,7 @@ export class ConsultaComponent implements OnInit {
   onBack() {
     this.router.navigate(['']);
     this.login.logged = false;
-    this._snackBar.open('Logout realizada com sucesso!', '', {duration: 5000});
+    this._snackBar.open('Logout realizado com sucesso!', '', {duration: 5000});
   }
 
 }
