@@ -8,7 +8,7 @@ import { Medico } from '../../model/medico';
 })
 export class MedicoListComponent implements OnInit {
 
-  readonly displayedColumns = ['id', 'nome', 'cpf', 'cnpj', 'crm', 'dataNascimento', 'endereco', 'email', 'telefone', 'tipoContrato', 'especialidade', 'actions'];
+  readonly displayedColumns = ['id', 'nome', 'actions'];
   @Input() medicos: Medico[] = [];
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
