@@ -25,7 +25,7 @@ export class AppComponent {
 
   onPatient() {
     // console.log('Working...');
-    this.router.navigate(['']);
+    this.router.navigate(['pacientes']);
   }
 
   onAppointment() {
