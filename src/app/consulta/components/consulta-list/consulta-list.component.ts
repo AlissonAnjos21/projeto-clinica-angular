@@ -8,7 +8,7 @@ import { Consulta } from '../../model/consulta';
 })
 export class ConsultaListComponent implements OnInit {
 
-  readonly displayedColumns = ['id', 'idMedico', 'idPaciente', 'data', 'hora', 'valor', 'formaPagamento', 'actions'];
+  readonly displayedColumns = ['id', 'data', 'actions'];
   @Input() consultas: Consulta[] = [];
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
